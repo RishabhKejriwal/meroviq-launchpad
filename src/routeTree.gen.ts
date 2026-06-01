@@ -9,38 +9,166 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ToolsRouteImport } from './routes/tools'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as Meroviq360RouteImport } from './routes/meroviq-360'
+import { Route as LaunchpadRouteImport } from './routes/launchpad'
+import { Route as ImpactRouteImport } from './routes/impact'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesMarketingRouteImport } from './routes/services.marketing'
+import { Route as ServicesDevelopmentRouteImport } from './routes/services.development'
 
+const ToolsRoute = ToolsRouteImport.update({
+  id: '/tools',
+  path: '/tools',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Meroviq360Route = Meroviq360RouteImport.update({
+  id: '/meroviq-360',
+  path: '/meroviq-360',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LaunchpadRoute = LaunchpadRouteImport.update({
+  id: '/launchpad',
+  path: '/launchpad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpactRoute = ImpactRouteImport.update({
+  id: '/impact',
+  path: '/impact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesMarketingRoute = ServicesMarketingRouteImport.update({
+  id: '/marketing',
+  path: '/marketing',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesDevelopmentRoute = ServicesDevelopmentRouteImport.update({
+  id: '/development',
+  path: '/development',
+  getParentRoute: () => ServicesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/impact': typeof ImpactRoute
+  '/launchpad': typeof LaunchpadRoute
+  '/meroviq-360': typeof Meroviq360Route
+  '/services': typeof ServicesRouteWithChildren
+  '/tools': typeof ToolsRoute
+  '/services/development': typeof ServicesDevelopmentRoute
+  '/services/marketing': typeof ServicesMarketingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/impact': typeof ImpactRoute
+  '/launchpad': typeof LaunchpadRoute
+  '/meroviq-360': typeof Meroviq360Route
+  '/services': typeof ServicesRouteWithChildren
+  '/tools': typeof ToolsRoute
+  '/services/development': typeof ServicesDevelopmentRoute
+  '/services/marketing': typeof ServicesMarketingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/impact': typeof ImpactRoute
+  '/launchpad': typeof LaunchpadRoute
+  '/meroviq-360': typeof Meroviq360Route
+  '/services': typeof ServicesRouteWithChildren
+  '/tools': typeof ToolsRoute
+  '/services/development': typeof ServicesDevelopmentRoute
+  '/services/marketing': typeof ServicesMarketingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/impact'
+    | '/launchpad'
+    | '/meroviq-360'
+    | '/services'
+    | '/tools'
+    | '/services/development'
+    | '/services/marketing'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/impact'
+    | '/launchpad'
+    | '/meroviq-360'
+    | '/services'
+    | '/tools'
+    | '/services/development'
+    | '/services/marketing'
+  id:
+    | '__root__'
+    | '/'
+    | '/impact'
+    | '/launchpad'
+    | '/meroviq-360'
+    | '/services'
+    | '/tools'
+    | '/services/development'
+    | '/services/marketing'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ImpactRoute: typeof ImpactRoute
+  LaunchpadRoute: typeof LaunchpadRoute
+  Meroviq360Route: typeof Meroviq360Route
+  ServicesRoute: typeof ServicesRouteWithChildren
+  ToolsRoute: typeof ToolsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/tools': {
+      id: '/tools'
+      path: '/tools'
+      fullPath: '/tools'
+      preLoaderRoute: typeof ToolsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/meroviq-360': {
+      id: '/meroviq-360'
+      path: '/meroviq-360'
+      fullPath: '/meroviq-360'
+      preLoaderRoute: typeof Meroviq360RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/launchpad': {
+      id: '/launchpad'
+      path: '/launchpad'
+      fullPath: '/launchpad'
+      preLoaderRoute: typeof LaunchpadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/impact': {
+      id: '/impact'
+      path: '/impact'
+      fullPath: '/impact'
+      preLoaderRoute: typeof ImpactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,12 +176,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/marketing': {
+      id: '/services/marketing'
+      path: '/marketing'
+      fullPath: '/services/marketing'
+      preLoaderRoute: typeof ServicesMarketingRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/development': {
+      id: '/services/development'
+      path: '/development'
+      fullPath: '/services/development'
+      preLoaderRoute: typeof ServicesDevelopmentRouteImport
+      parentRoute: typeof ServicesRoute
+    }
   }
 }
 
+interface ServicesRouteChildren {
+  ServicesDevelopmentRoute: typeof ServicesDevelopmentRoute
+  ServicesMarketingRoute: typeof ServicesMarketingRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesDevelopmentRoute: ServicesDevelopmentRoute,
+  ServicesMarketingRoute: ServicesMarketingRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ImpactRoute: ImpactRoute,
+  LaunchpadRoute: LaunchpadRoute,
+  Meroviq360Route: Meroviq360Route,
+  ServicesRoute: ServicesRouteWithChildren,
+  ToolsRoute: ToolsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
