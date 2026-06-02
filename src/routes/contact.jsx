@@ -16,17 +16,6 @@ function __PageMeta() {
   }, []);
   return null;
 }
-({
-  head: () => ({
-    meta: [
-      { title: "Contact Meroviq Technologies" },
-      { name: "description", content: "Talk to our team about CRM, development, marketing or internship opportunities." },
-      { property: "og:url", content: "/contact" }
-    ],
-    links: [{ rel: "canonical", href: "/contact" }]
-  }),
-  component: Page
-});
 function Page() {
   return <>
       <PageHero eyebrow="Contact" title={<>Let's build something <span className="text-gradient-brand">together</span></>} subtitle="We respond within one business day. Tell us a bit about your goals and we'll take it from there." />

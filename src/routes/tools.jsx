@@ -16,17 +16,6 @@ function __PageMeta() {
   }, []);
   return null;
 }
-({
-  head: () => ({
-    meta: [
-      { title: "Free Tools \u2014 Meroviq Technologies" },
-      { name: "description", content: "Free productivity tools \u2014 digital signature, grammar corrector, file converter and QA effort estimator." },
-      { property: "og:url", content: "/tools" }
-    ],
-    links: [{ rel: "canonical", href: "/tools" }]
-  }),
-  component: Page
-});
 const TOOLS = [
   { to: "/tools/digital-signature", title: "Digital Signature", desc: "Sign and share documents instantly.", icon: FileSignature },
   { to: "/tools/grammar-corrector", title: "Grammar Corrector", desc: "Catch errors and improve clarity.", icon: SpellCheck },

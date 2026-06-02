@@ -17,19 +17,6 @@ function __PageMeta() {
   }, []);
   return null;
 }
-({
-  head: () => ({
-    meta: [
-      { title: "Services \u2014 Meroviq Technologies" },
-      { name: "description", content: "Development, testing, CRM and digital marketing services for small businesses and startups." },
-      { property: "og:title", content: "Services \u2014 Meroviq Technologies" },
-      { property: "og:description", content: "Engineering and marketing services built for growth." },
-      { property: "og:url", content: "/services" }
-    ],
-    links: [{ rel: "canonical", href: "/services" }]
-  }),
-  component: Page
-});
 const CATS = [
   { to: "/services/development", title: "Development & Testing", desc: "Web, SaaS customization, custom software and QA across the stack.", icon: Code2 },
   { to: "/services/marketing", title: "Digital Marketing", desc: "SEO, social, YouTube, performance marketing and analytics.", icon: Megaphone }

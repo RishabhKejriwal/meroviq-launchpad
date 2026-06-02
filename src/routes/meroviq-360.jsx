@@ -17,19 +17,6 @@ function __PageMeta() {
   }, []);
   return null;
 }
-({
-  head: () => ({
-    meta: [
-      { title: "Meroviq 360 \u2014 All-in-One CRM for Growing Businesses" },
-      { name: "description", content: "Manage leads, automate workflows and unlock analytics with Meroviq 360, the affordable CRM built for small businesses and startups." },
-      { property: "og:title", content: "Meroviq 360 CRM" },
-      { property: "og:description", content: "All-in-one CRM platform \u2014 coming soon." },
-      { property: "og:url", content: "/meroviq-360" }
-    ],
-    links: [{ rel: "canonical", href: "/meroviq-360" }]
-  }),
-  component: Page
-});
 const BENEFITS = [
   { icon: Zap, title: "Faster sales cycles", desc: "Cut admin time and respond to leads the moment they convert." },
   { icon: Workflow, title: "End-to-end automation", desc: "Automate follow-ups, hand-offs and reporting in minutes." },

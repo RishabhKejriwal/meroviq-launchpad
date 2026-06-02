@@ -16,17 +16,6 @@ function __PageMeta() {
   }, []);
   return null;
 }
-({
-  head: () => ({
-    meta: [
-      { title: "Image Converter \u2014 Free Tool by Meroviq" },
-      { name: "description", content: "Convert images between PNG, JPG and WebP in your browser. Free and private." },
-      { property: "og:url", content: "/tools/file-converter" }
-    ],
-    links: [{ rel: "canonical", href: "/tools/file-converter" }]
-  }),
-  component: Page
-});
 function Page() {
   return <ToolPage
     eyebrow="File Converter"

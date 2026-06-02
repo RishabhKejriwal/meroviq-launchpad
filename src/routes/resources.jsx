@@ -17,17 +17,6 @@ function __PageMeta() {
   }, []);
   return null;
 }
-({
-  head: () => ({
-    meta: [
-      { title: "Resources & Guides \u2014 Meroviq Technologies" },
-      { name: "description", content: "FAQ guides for IT professionals, Salesforce careers and QA testers." },
-      { property: "og:url", content: "/resources" }
-    ],
-    links: [{ rel: "canonical", href: "/resources" }]
-  }),
-  component: Page
-});
 const GUIDES = [
   { to: "/resources/it-professionals-faq", title: "IT Professionals FAQ Guide", cat: "Careers", desc: "Career paths, skills and interview tips for IT freshers." },
   { to: "/resources/salesforce-career-faq", title: "Salesforce Career FAQ Guide", cat: "CRM", desc: "From admin to architect \u2014 your Salesforce roadmap." },

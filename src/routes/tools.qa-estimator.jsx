@@ -14,17 +14,6 @@ function __PageMeta() {
   }, []);
   return null;
 }
-({
-  head: () => ({
-    meta: [
-      { title: "QA Effort Estimator \u2014 Free Tool by Meroviq" },
-      { name: "description", content: "Estimate QA effort based on test cases, complexity and automation coverage." },
-      { property: "og:url", content: "/tools/qa-estimator" }
-    ],
-    links: [{ rel: "canonical", href: "/tools/qa-estimator" }]
-  }),
-  component: Page
-});
 function Page() {
   return <ToolPage
     eyebrow="QA Effort Estimator"

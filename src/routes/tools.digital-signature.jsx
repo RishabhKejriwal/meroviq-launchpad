@@ -15,17 +15,6 @@ function __PageMeta() {
   }, []);
   return null;
 }
-({
-  head: () => ({
-    meta: [
-      { title: "Digital Signature \u2014 Free Tool by Meroviq" },
-      { name: "description", content: "Draw and download your digital signature as a transparent PNG. Free, private, in-browser." },
-      { property: "og:url", content: "/tools/digital-signature" }
-    ],
-    links: [{ rel: "canonical", href: "/tools/digital-signature" }]
-  }),
-  component: Page
-});
 function Page() {
   return <ToolPage
     eyebrow="Digital Signature"

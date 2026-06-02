@@ -17,19 +17,6 @@ function __PageMeta() {
   }, []);
   return null;
 }
-({
-  head: () => ({
-    meta: [
-      { title: "Meroviq Technologies \u2014 Scalable Digital Solutions for Growing Businesses" },
-      { name: "description", content: "CRM, software development, digital marketing and IT internships built for small businesses, entrepreneurs and the next generation of tech talent." },
-      { property: "og:title", content: "Meroviq Technologies" },
-      { property: "og:description", content: "Transforming ideas into scalable digital solutions." },
-      { property: "og:url", content: "/" }
-    ],
-    links: [{ rel: "canonical", href: "/" }]
-  }),
-  component: HomePage
-});
 const SERVICES = [
   { to: "/meroviq-360", title: "Meroviq 360", desc: "All-in-one CRM platform to manage, automate and grow your business.", cta: "Explore Product", icon: LayoutDashboard },
   { to: "/services/development", title: "Development & Testing", desc: "Website development, SaaS customization, custom software and QA testing.", cta: "Explore Services", icon: Code2 },

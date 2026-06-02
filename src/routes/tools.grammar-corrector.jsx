@@ -14,17 +14,6 @@ function __PageMeta() {
   }, []);
   return null;
 }
-({
-  head: () => ({
-    meta: [
-      { title: "Grammar Corrector \u2014 Free Tool by Meroviq" },
-      { name: "description", content: "Quick rule-based grammar and clarity suggestions, in-browser and free." },
-      { property: "og:url", content: "/tools/grammar-corrector" }
-    ],
-    links: [{ rel: "canonical", href: "/tools/grammar-corrector" }]
-  }),
-  component: Page
-});
 const RULES = [
   { re: /\bi\b/g, msg: "Capitalize 'I'", fix: "I" },
   { re: /\s{2,}/g, msg: "Extra spaces", fix: " " },

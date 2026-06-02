@@ -13,17 +13,6 @@ function __PageMeta() {
   }, []);
   return null;
 }
-({
-  head: () => ({
-    meta: [
-      { title: "QA Tester FAQ Guide \u2014 Meroviq" },
-      { name: "description", content: "Everything you wanted to know about a QA career \u2014 tools, skills and growth." },
-      { property: "og:url", content: "/resources/qa-tester-faq" }
-    ],
-    links: [{ rel: "canonical", href: "/resources/qa-tester-faq" }]
-  }),
-  component: Page
-});
 function Page() {
   return <Guide
     title={<>QA Tester FAQ Guide</>}

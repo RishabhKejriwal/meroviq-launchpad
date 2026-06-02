@@ -13,17 +13,6 @@ function __PageMeta() {
   }, []);
   return null;
 }
-({
-  head: () => ({
-    meta: [
-      { title: "Salesforce Career FAQ Guide \u2014 Meroviq" },
-      { name: "description", content: "Roadmap, certifications and tips for a successful Salesforce career." },
-      { property: "og:url", content: "/resources/salesforce-career-faq" }
-    ],
-    links: [{ rel: "canonical", href: "/resources/salesforce-career-faq" }]
-  }),
-  component: Page
-});
 function Page() {
   return <Guide
     title={<>Salesforce Career FAQ Guide</>}

@@ -17,17 +17,6 @@ function __PageMeta() {
   }, []);
   return null;
 }
-({
-  head: () => ({
-    meta: [
-      { title: "Digital Marketing Services \u2014 Meroviq" },
-      { name: "description", content: "SEO, social media, YouTube and performance marketing services that grow your audience and your revenue." },
-      { property: "og:url", content: "/services/marketing" }
-    ],
-    links: [{ rel: "canonical", href: "/services/marketing" }]
-  }),
-  component: Page
-});
 const SVC = [
   { icon: Search, title: "SEO", desc: "Technical, content and authority building for sustainable traffic." },
   { icon: Share2, title: "Social Media", desc: "Strategy, calendar, creative and community management." },

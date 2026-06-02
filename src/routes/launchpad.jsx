@@ -17,17 +17,6 @@ function __PageMeta() {
   }, []);
   return null;
 }
-({
-  head: () => ({
-    meta: [
-      { title: "Meroviq Launchpad \u2014 Learn. Build. Launch Your Career." },
-      { name: "description", content: "Hands-on IT internships across full stack development, QA, Salesforce/CRM and digital marketing \u2014 with certificates, live projects and career support." },
-      { property: "og:url", content: "/launchpad" }
-    ],
-    links: [{ rel: "canonical", href: "/launchpad" }]
-  }),
-  component: Page
-});
 const TRACKS = [
   { icon: Code2, title: "Full Stack Development", desc: "React, Node, databases, deployment." },
   { icon: ShieldCheck, title: "QA Testing", desc: "Manual + automation, real test plans." },

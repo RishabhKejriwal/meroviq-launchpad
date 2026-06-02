@@ -17,17 +17,6 @@ function __PageMeta() {
   }, []);
   return null;
 }
-({
-  head: () => ({
-    meta: [
-      { title: "Development & Testing Services \u2014 Meroviq" },
-      { name: "description", content: "Website development, SaaS customization (Salesforce, Zoho, Microsoft Dynamics), custom software and QA testing." },
-      { property: "og:url", content: "/services/development" }
-    ],
-    links: [{ rel: "canonical", href: "/services/development" }]
-  }),
-  component: Page
-});
 const SVC = [
   { icon: Code2, title: "Website Development", desc: "Marketing sites, e-commerce and web apps built fast and built right." },
   { icon: Cloud, title: "SaaS Customization", desc: "Salesforce, Zoho and Microsoft Dynamics \u2014 configured around your workflows." },

@@ -15,17 +15,6 @@ function __PageMeta() {
   }, []);
   return null;
 }
-({
-  head: () => ({
-    meta: [
-      { title: "Privacy Policy \u2014 Meroviq Technologies" },
-      { name: "description", content: "How Meroviq Technologies collects, uses and protects your data." },
-      { property: "og:url", content: "/privacy" }
-    ],
-    links: [{ rel: "canonical", href: "/privacy" }]
-  }),
-  component: Page
-});
 const SECTIONS = [
   { id: "intro", title: "1. Introduction", body: 'This Privacy Policy explains how Meroviq Technologies ("we", "us") collects, uses and safeguards information when you use our websites and services.' },
   { id: "data", title: "2. Data we collect", body: "Account details, contact information, technical data such as device and browser information, and usage analytics collected with consent." },

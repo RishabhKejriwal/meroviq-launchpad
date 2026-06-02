@@ -13,17 +13,6 @@ function __PageMeta() {
   }, []);
   return null;
 }
-({
-  head: () => ({
-    meta: [
-      { title: "IT Professionals FAQ Guide \u2014 Meroviq" },
-      { name: "description", content: "Common questions answered for aspiring and early-career IT professionals." },
-      { property: "og:url", content: "/resources/it-professionals-faq" }
-    ],
-    links: [{ rel: "canonical", href: "/resources/it-professionals-faq" }]
-  }),
-  component: Page
-});
 function Page() {
   return <Guide
     title={<>IT Professionals FAQ Guide</>}

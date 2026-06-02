@@ -17,17 +17,6 @@ function __PageMeta() {
   }, []);
   return null;
 }
-({
-  head: () => ({
-    meta: [
-      { title: "Meroviq Impact \u2014 Technology, Sustainability & Well-being" },
-      { name: "description", content: "Our community initiatives across environmental sustainability, education, social good and well-being." },
-      { property: "og:url", content: "/impact" }
-    ],
-    links: [{ rel: "canonical", href: "/impact" }]
-  }),
-  component: Page
-});
 const PILLARS = [
   { icon: Leaf, title: "Environmental Sustainability", desc: "Tree plantation drives, low-waste operations and green hosting." },
   { icon: Recycle, title: "Waste Reduction & Clean Living", desc: "Community clean-ups and zero-waste workshops." },
