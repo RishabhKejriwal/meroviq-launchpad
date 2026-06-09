@@ -233,59 +233,52 @@ function HomePage() {
     </>;
 }
 function HeroVisual() {
-  const services = [
-    { icon: Code2, label: "Web & Software Development", tone: "brand" },
-    { icon: LayoutDashboard, label: "CRM Solutions", tone: "accent2" },
-    { icon: Megaphone, label: "Digital Marketing", tone: "brand" },
-    { icon: GraduationCap, label: "IT Internships", tone: "accent2" },
+  const orbit = [
+    { icon: Code2, label: "Development", tone: "brand", pos: "top-4 left-1/2 -translate-x-1/2" },
+    { icon: LayoutDashboard, label: "CRM", tone: "accent2", pos: "top-1/2 right-4 -translate-y-1/2" },
+    { icon: Megaphone, label: "Marketing", tone: "brand", pos: "bottom-4 left-1/2 -translate-x-1/2" },
+    { icon: GraduationCap, label: "Internships", tone: "accent2", pos: "top-1/2 left-4 -translate-y-1/2" },
   ];
   return <div className="relative h-[480px] hidden md:block animate-fade-in">
-      {/* Main code/terminal card */}
       <div className="absolute inset-0 rounded-3xl gradient-brand p-1 shadow-glow">
-        <div className="h-full w-full rounded-[22px] bg-white p-6 flex flex-col">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="h-2.5 w-2.5 rounded-full bg-red-400" />
-              <div className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
-              <div className="h-2.5 w-2.5 rounded-full bg-green-400" />
-            </div>
-            <span className="text-xs font-medium text-ink-muted">meroviq.config.js</span>
+        <div className="relative h-full w-full rounded-[22px] bg-white overflow-hidden">
+          {/* Soft background glows */}
+          <div aria-hidden className="absolute -top-20 -left-20 h-64 w-64 rounded-full bg-brand opacity-10 blur-3xl" />
+          <div aria-hidden className="absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-accent2 opacity-10 blur-3xl" />
+
+          {/* Orbit rings */}
+          <div aria-hidden className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[340px] w-[340px] rounded-full border border-hairline" />
+          <div aria-hidden className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[230px] w-[230px] rounded-full border border-hairline" />
+
+          {/* Center brand mark */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-24 w-24 rounded-2xl gradient-brand text-white shadow-glow flex flex-col items-center justify-center">
+            <Sparkles className="h-7 w-7" />
+            <span className="mt-1 text-[11px] font-semibold tracking-wide">MEROVIQ</span>
           </div>
 
-          {/* Code snippet */}
-          <div className="mt-5 rounded-xl bg-surface p-4 font-mono text-[12px] leading-relaxed">
-            <div><span className="text-ink-muted mr-2">01</span><span className="text-brand">const</span> meroviq = <span className="text-accent2">{"{"}</span></div>
-            <div><span className="text-ink-muted mr-2">02</span>  mission: <span className="text-accent2">"empower SMBs"</span>,</div>
-            <div><span className="text-ink-muted mr-2">03</span>  stack: [<span className="text-accent2">"React"</span>, <span className="text-accent2">"Node"</span>, <span className="text-accent2">"AI"</span>],</div>
-            <div><span className="text-ink-muted mr-2">04</span>  build: <span className="text-brand">async</span> () =&gt; <span className="text-accent2">"launch 🚀"</span>,</div>
-            <div><span className="text-ink-muted mr-2">05</span><span className="text-accent2">{"}"}</span>;</div>
-          </div>
-
-          {/* Services list */}
-          <div className="mt-5 flex-1 grid grid-cols-2 gap-3">
-            {services.map((s) => <div key={s.label} className="rounded-xl border border-hairline p-3 flex items-center gap-2.5">
-                <div className={`h-8 w-8 shrink-0 rounded-lg flex items-center justify-center ${s.tone === "brand" ? "bg-brand-soft text-brand" : "bg-accent2-soft text-accent2"}`}>
-                  <s.icon className="h-4 w-4" />
-                </div>
-                <span className="text-xs font-medium text-ink leading-tight">{s.label}</span>
-              </div>)}
-          </div>
+          {/* Orbit service nodes */}
+          {orbit.map((s) => <div key={s.label} className={`absolute ${s.pos} flex flex-col items-center gap-1.5`}>
+              <div className={`h-14 w-14 rounded-2xl bg-white border border-hairline shadow-soft flex items-center justify-center ${s.tone === "brand" ? "text-brand" : "text-accent2"}`}>
+                <s.icon className="h-6 w-6" />
+              </div>
+              <span className="text-[11px] font-semibold text-ink bg-white/80 backdrop-blur px-2 py-0.5 rounded-full">{s.label}</span>
+            </div>)}
         </div>
       </div>
 
-      {/* Floating cards */}
-      <div className="absolute -left-8 top-24 rounded-2xl bg-white border border-hairline shadow-glow p-4 w-60 animate-float">
+      {/* Floating tags */}
+      <div className="absolute -left-6 top-16 rounded-2xl bg-white border border-hairline shadow-glow p-4 w-56 animate-float">
         <div className="flex items-center gap-3">
           <div className="h-10 w-10 rounded-lg bg-accent2-soft text-accent2 flex items-center justify-center">
-            <Sparkles className="h-5 w-5" />
+            <HeartHandshake className="h-5 w-5" />
           </div>
           <div>
-            <div className="text-xs text-ink-muted">Now onboarding</div>
-            <div className="text-sm font-semibold text-ink">Early-access clients</div>
+            <div className="text-xs text-ink-muted">Built for</div>
+            <div className="text-sm font-semibold text-ink">Small businesses</div>
           </div>
         </div>
       </div>
-      <div className="absolute -right-6 bottom-12 rounded-2xl bg-white border border-hairline shadow-glow p-4 w-60" style={{ animation: "float 6s ease-in-out infinite", animationDelay: "1.5s" }}>
+      <div className="absolute -right-4 bottom-16 rounded-2xl bg-white border border-hairline shadow-glow p-4 w-56" style={{ animation: "float 6s ease-in-out infinite", animationDelay: "1.5s" }}>
         <div className="flex items-center gap-3">
           <div className="h-10 w-10 rounded-lg bg-brand-soft text-brand flex items-center justify-center">
             <GraduationCap className="h-5 w-5" />
