@@ -233,10 +233,14 @@ function HomePage() {
     </>;
 }
 function HeroVisual() {
+  const services = [
+    { icon: Code2, label: "Web & Software Development", tone: "brand" },
+    { icon: LayoutDashboard, label: "CRM Solutions", tone: "accent2" },
+    { icon: Megaphone, label: "Digital Marketing", tone: "brand" },
+    { icon: GraduationCap, label: "IT Internships", tone: "accent2" },
+  ];
   return <div className="relative h-[480px] hidden md:block animate-fade-in">
-      {
-    /* Main dashboard card */
-  }
+      {/* Main code/terminal card */}
       <div className="absolute inset-0 rounded-3xl gradient-brand p-1 shadow-glow">
         <div className="h-full w-full rounded-[22px] bg-white p-6 flex flex-col">
           <div className="flex items-center justify-between">
@@ -245,56 +249,50 @@ function HeroVisual() {
               <div className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
               <div className="h-2.5 w-2.5 rounded-full bg-green-400" />
             </div>
-            <span className="text-xs font-medium text-ink-muted">Meroviq 360</span>
+            <span className="text-xs font-medium text-ink-muted">meroviq.config.js</span>
           </div>
-          <div className="mt-5 grid grid-cols-3 gap-3">
-            {[
-    { l: "Leads", v: "1,248", c: "text-brand" },
-    { l: "Revenue", v: "$84k", c: "text-accent2" },
-    { l: "Tasks", v: "92%", c: "text-brand" }
-  ].map((s) => <div key={s.l} className="rounded-xl bg-surface p-3">
-                <div className="text-[10px] uppercase tracking-wider text-ink-muted">{s.l}</div>
-                <div className={`mt-1 text-lg font-bold ${s.c}`}>{s.v}</div>
+
+          {/* Code snippet */}
+          <div className="mt-5 rounded-xl bg-surface p-4 font-mono text-[12px] leading-relaxed">
+            <div><span className="text-ink-muted mr-2">01</span><span className="text-brand">const</span> meroviq = <span className="text-accent2">{"{"}</span></div>
+            <div><span className="text-ink-muted mr-2">02</span>  mission: <span className="text-accent2">"empower SMBs"</span>,</div>
+            <div><span className="text-ink-muted mr-2">03</span>  stack: [<span className="text-accent2">"React"</span>, <span className="text-accent2">"Node"</span>, <span className="text-accent2">"AI"</span>],</div>
+            <div><span className="text-ink-muted mr-2">04</span>  build: <span className="text-brand">async</span> () =&gt; <span className="text-accent2">"launch 🚀"</span>,</div>
+            <div><span className="text-ink-muted mr-2">05</span><span className="text-accent2">{"}"}</span>;</div>
+          </div>
+
+          {/* Services list */}
+          <div className="mt-5 flex-1 grid grid-cols-2 gap-3">
+            {services.map((s) => <div key={s.label} className="rounded-xl border border-hairline p-3 flex items-center gap-2.5">
+                <div className={`h-8 w-8 shrink-0 rounded-lg flex items-center justify-center ${s.tone === "brand" ? "bg-brand-soft text-brand" : "bg-accent2-soft text-accent2"}`}>
+                  <s.icon className="h-4 w-4" />
+                </div>
+                <span className="text-xs font-medium text-ink leading-tight">{s.label}</span>
               </div>)}
-          </div>
-          <div className="mt-5 flex-1 rounded-xl bg-surface p-4 flex items-end gap-2">
-            {[40, 65, 50, 80, 55, 90, 70, 95, 60, 88].map((h, i) => <div key={i} className="flex-1 rounded-t-md gradient-brand" style={{ height: `${h}%`, opacity: 0.4 + i * 0.06 }} />)}
-          </div>
-          <div className="mt-4 grid grid-cols-2 gap-3">
-            <div className="rounded-xl border border-hairline p-3 flex items-center gap-2">
-              <BarChart3 className="h-4 w-4 text-brand" />
-              <span className="text-xs font-medium text-ink">Analytics</span>
-            </div>
-            <div className="rounded-xl border border-hairline p-3 flex items-center gap-2">
-              <Sparkles className="h-4 w-4 text-accent2" />
-              <span className="text-xs font-medium text-ink">Automations</span>
-            </div>
           </div>
         </div>
       </div>
 
-      {
-    /* Floating cards */
-  }
-      <div className="absolute -left-8 top-20 rounded-2xl bg-white border border-hairline shadow-glow p-4 w-56 animate-float">
+      {/* Floating cards */}
+      <div className="absolute -left-8 top-24 rounded-2xl bg-white border border-hairline shadow-glow p-4 w-60 animate-float">
         <div className="flex items-center gap-3">
           <div className="h-10 w-10 rounded-lg bg-accent2-soft text-accent2 flex items-center justify-center">
-            <Megaphone className="h-5 w-5" />
+            <Sparkles className="h-5 w-5" />
           </div>
           <div>
-            <div className="text-xs text-ink-muted">Campaign live</div>
-            <div className="text-sm font-semibold text-ink">+38% CTR</div>
+            <div className="text-xs text-ink-muted">Now onboarding</div>
+            <div className="text-sm font-semibold text-ink">Early-access clients</div>
           </div>
         </div>
       </div>
-      <div className="absolute -right-6 bottom-12 rounded-2xl bg-white border border-hairline shadow-glow p-4 w-56" style={{ animation: "float 6s ease-in-out infinite", animationDelay: "1.5s" }}>
+      <div className="absolute -right-6 bottom-12 rounded-2xl bg-white border border-hairline shadow-glow p-4 w-60" style={{ animation: "float 6s ease-in-out infinite", animationDelay: "1.5s" }}>
         <div className="flex items-center gap-3">
           <div className="h-10 w-10 rounded-lg bg-brand-soft text-brand flex items-center justify-center">
-            <Code2 className="h-5 w-5" />
+            <GraduationCap className="h-5 w-5" />
           </div>
           <div>
-            <div className="text-xs text-ink-muted">Deployed</div>
-            <div className="text-sm font-semibold text-ink">v2.4 · success</div>
+            <div className="text-xs text-ink-muted">Launchpad</div>
+            <div className="text-sm font-semibold text-ink">Internships open</div>
           </div>
         </div>
       </div>
